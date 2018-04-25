@@ -198,6 +198,12 @@ export class CppProperties {
             if (!settings.defaultIncludePath) {
                 // We don't add system includes to the includePath anymore. The language server has this information.
                 configuration.includePath = ["${workspaceFolder}"];
+                
+                // Check for vcpkg instance and include relevent paths if found.
+                if (util.checkFileExists("c:/users/jimgries/AppData/Local/vcpkg/vcpkg.path.txt")
+                {
+
+                }
             }
             if (!settings.defaultDefines) {
                 configuration.defines = (process.platform === 'win32') ? ["_DEBUG", "UNICODE", "_UNICODE"] : [];
